@@ -2,20 +2,19 @@
 const menu = document.querySelector('.menu');
 const copy = document.querySelector('.copy');
 
-const cloneMenu = menu.cloneNode(true);
-copy.appendChild(cloneMenu);
+const menuClone = menu.cloneNode(true);
+
+copy.appendChild(menuClone);
 
 // Selecione o primeiro DT da dl de Faq
-const faq = document.querySelector('.faq');
-const primeiroDt = faq.querySelector('dt');
-
+const dl = document.querySelector('dl');
+const primeiroDt = dl.querySelector('dt');
 
 // Selecione o DD referente ao primeiro DT
-const proximoDD = primeiroDt.nextElementSibling;
-
-console.log(proximoDD);
+const dd = primeiroDt.nextElementSibling;
+console.log(dd.innerHTML);
 
 // Substitua o conteúdo html de .faq pelo de .animais
+const faq = document.querySelector('.faq');
 const animais = document.querySelector('.animais');
-
 faq.innerHTML = animais.innerHTML;
